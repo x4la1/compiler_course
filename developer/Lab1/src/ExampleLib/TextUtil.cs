@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Text;
 
 namespace ExampleLib;
@@ -9,6 +10,8 @@ public static class TextUtil
 
     // Символы Unicode, которые мы принимаем как апостроф.
     private static readonly Rune[] Apostrophes = [new Rune('\''), new Rune('`')];
+
+    private static readonly char[] ArabicDigits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩',];
 
     // Состояния распознавателя слов.
     private enum WordState
@@ -126,5 +129,24 @@ public static class TextUtil
                 currentWord.Clear();
             }
         }
+    }
+
+    public static string FormatEasternArabic(int value)
+    {
+        StringBuilder result = new();
+        string digits = value.ToString();
+
+        if (value < 0)
+        {
+            digits = digits.Remove(0, 1);
+            result.Append('-');
+        }
+
+        foreach (char digit in digits)
+        {
+            result.Append(ArabicDigits[digit - '0']);
+        }
+
+        return result.ToString();
     }
 }

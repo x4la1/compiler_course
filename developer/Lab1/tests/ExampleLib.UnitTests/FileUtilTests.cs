@@ -1,4 +1,6 @@
-﻿using ExampleLib.UnitTests.Helpers;
+﻿using System.Globalization;
+
+using ExampleLib.UnitTests.Helpers;
 
 using Xunit;
 
@@ -48,5 +50,61 @@ public class FileUtilTests
 
         string actual = File.ReadAllText(file.Path);
         Assert.Equal("", actual);
+    }
+
+    [Fact]
+    public void CanAddLineNumbersInTextFile()
+    {
+        const string unnumbered = """
+                                Играют волны — ветер свищет,
+                                И мачта гнется и скрыпит…
+                                Увы! он счастия не ищет
+                                И не от счастия бежит!
+                                """;
+
+        const string numbered = """
+                                1. Играют волны — ветер свищет,
+                                2. И мачта гнется и скрыпит…
+                                3. Увы! он счастия не ищет
+                                4. И не от счастия бежит!
+                                """;
+
+        using TempFile file = TempFile.Create(unnumbered);
+        FileUtil.AddLineNumbers(file.Path);
+
+        string actual = File.ReadAllText(file.Path);
+        Assert.Equal(numbered.Replace("\r\n", "\n"), actual);
+    }
+
+    [Fact]
+    public void CanAddLineNumbersOneLineFile()
+    {
+        const string unnumbered = """
+                                Играют волны — ветер свищет,
+                                """;
+
+        const string numbered = """
+                                1. Играют волны — ветер свищет,
+                                """;
+
+        using TempFile file = TempFile.Create(unnumbered);
+        FileUtil.AddLineNumbers(file.Path);
+
+        string actual = File.ReadAllText(file.Path);
+        Assert.Equal(numbered.Replace("\r\n", "\n"), actual);
+    }
+
+    [Fact]
+    public void CanAddLineNumbersEmptyFile()
+    {
+        const string unnumbered = "";
+
+        const string numbered = "";
+
+        using TempFile file = TempFile.Create(unnumbered);
+        FileUtil.AddLineNumbers(file.Path);
+
+        string actual = File.ReadAllText(file.Path);
+        Assert.Equal(numbered.Replace("\r\n", "\n"), actual);
     }
 }

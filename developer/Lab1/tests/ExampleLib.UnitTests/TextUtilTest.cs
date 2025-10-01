@@ -99,4 +99,44 @@ public class TextUtilTest
         List<string> actual = TextUtil.ExtractWords(text);
         Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void CanFormatPositiveEasternArabic()
+    {
+        int value = 1234567890;
+        string expected = "١٢٣٤٥٦٧٨٩٠";
+
+        string actual = TextUtil.FormatEasternArabic(value);
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void CanFormatNegativeEasternArabic()
+    {
+        int value = -1234567890;
+        string expected = "-١٢٣٤٥٦٧٨٩٠";
+
+        string actual = TextUtil.FormatEasternArabic(value);
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void CanFormatMaxEasternArabic()
+    {
+        int value = int.MaxValue;
+        string expected = "٢١٤٧٤٨٣٦٤٧";
+
+        string actual = TextUtil.FormatEasternArabic(value);
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
+    public void CanFormatMinEasternArabic()
+    {
+        int value = int.MinValue;
+        string expected = "-٢١٤٧٤٨٣٦٤٨";
+
+        string actual = TextUtil.FormatEasternArabic(value);
+        Assert.Equal(expected, actual);
+    }
 }
