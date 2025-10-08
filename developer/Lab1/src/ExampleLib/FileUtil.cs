@@ -29,6 +29,11 @@ public static class FileUtil
 
     public static void AddLineNumbers(string path)
     {
+        if (!File.Exists(path))
+        {
+            throw new FileNotFoundException();
+        }
+
         List<string> lines = File.ReadLines(path, Encoding.UTF8).ToList();
 
         using FileStream file = File.Open(path, FileMode.Truncate, FileAccess.Write);

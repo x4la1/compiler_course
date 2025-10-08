@@ -5,7 +5,7 @@ namespace ExampleLib.UnitTests;
 public class TextUtilTest
 {
     [Fact]
-    public void Can_extract_russian_words()
+    public void CanExtractRussianWords()
     {
         const string text = """
                             Играют волны — ветер свищет,
@@ -41,7 +41,7 @@ public class TextUtilTest
     }
 
     [Fact]
-    public void Can_extract_words_with_hyphens()
+    public void CanExtractWordsWithHyphens()
     {
         const string text = "Что-нибудь да как-нибудь, и +/- что- то ещё";
         List<string> expected =
@@ -60,7 +60,7 @@ public class TextUtilTest
     }
 
     [Fact]
-    public void Can_extract_words_with_apostrophes()
+    public void CanExtractWordsWithApostrophes()
     {
         const string text = "Children's toys and three cats' toys";
         List<string> expected =
@@ -78,7 +78,7 @@ public class TextUtilTest
     }
 
     [Fact]
-    public void Can_extract_words_with_grave_accent()
+    public void CanExtractWordsWithGraveAccent()
     {
         const string text = "Children`s toys and three cats` toys, all of''them are green";
         List<string> expected =
@@ -100,6 +100,7 @@ public class TextUtilTest
         Assert.Equal(expected, actual);
     }
 
+    //TOOD параметризованный тест
     [Fact]
     public void CanFormatPositiveEasternArabic()
     {

@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\Lab1\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9E45EACA-B811-400F-978F-7419AC8658D5}|tests\\ExampleLib.UnitTests\\ExampleLib.UnitTests.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\lab1\\tests\\examplelib.unittests\\textutiltest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9E45EACA-B811-400F-978F-7419AC8658D5}|tests\\ExampleLib.UnitTests\\ExampleLib.UnitTests.csproj|c:\\users\\\u0434\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\lab1\\tests\\examplelib.unittests\\fileutiltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E45EACA-B811-400F-978F-7419AC8658D5}|tests\\ExampleLib.UnitTests\\ExampleLib.UnitTests.csproj|solutionrelative:tests\\examplelib.unittests\\fileutiltests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E45EACA-B811-400F-978F-7419AC8658D5}|tests\\ExampleLib.UnitTests\\ExampleLib.UnitTests.csproj|c:\\users\\\u0434\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\lab1\\tests\\examplelib.unittests\\textutiltest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E45EACA-B811-400F-978F-7419AC8658D5}|tests\\ExampleLib.UnitTests\\ExampleLib.UnitTests.csproj|solutionrelative:tests\\examplelib.unittests\\textutiltest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3DB6112-0E76-495B-BE71-5186112A4296}|src\\ExampleLib\\ExampleLib.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\lab1\\src\\examplelib\\textutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D3DB6112-0E76-495B-BE71-5186112A4296}|src\\ExampleLib\\ExampleLib.csproj|c:\\users\\\u0434\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\lab1\\src\\examplelib\\textutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3DB6112-0E76-495B-BE71-5186112A4296}|src\\ExampleLib\\ExampleLib.csproj|solutionrelative:src\\examplelib\\textutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3DB6112-0E76-495B-BE71-5186112A4296}|src\\ExampleLib\\ExampleLib.csproj|c:\\users\\\u0434\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\lab1\\src\\examplelib\\fileutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3DB6112-0E76-495B-BE71-5186112A4296}|src\\ExampleLib\\ExampleLib.csproj|solutionrelative:src\\examplelib\\fileutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,39 +25,59 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 214,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TextUtilTest.cs",
-              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\Lab1\\tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
-              "RelativeDocumentMoniker": "tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
-              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\Lab1\\tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
-              "RelativeToolTip": "tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAiwHsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T14:10:26.954Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 193,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 176,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TextUtil.cs",
-              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\Lab1\\src\\ExampleLib\\TextUtil.cs",
-              "RelativeDocumentMoniker": "src\\ExampleLib\\TextUtil.cs",
-              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\Lab1\\src\\ExampleLib\\TextUtil.cs",
-              "RelativeToolTip": "src\\ExampleLib\\TextUtil.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAAAIgAAAApAAAAAAAAAA==",
+              "Title": "TextUtilTest.cs",
+              "DocumentMoniker": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
+              "RelativeDocumentMoniker": "tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
+              "ToolTip": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
+              "RelativeToolTip": "tests\\ExampleLib.UnitTests\\TextUtilTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T14:24:43.536Z",
+              "WhenOpened": "2025-10-02T07:31:55.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileUtilTests.cs",
+              "DocumentMoniker": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\tests\\ExampleLib.UnitTests\\FileUtilTests.cs",
+              "RelativeDocumentMoniker": "tests\\ExampleLib.UnitTests\\FileUtilTests.cs",
+              "ToolTip": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\tests\\ExampleLib.UnitTests\\FileUtilTests.cs",
+              "RelativeToolTip": "tests\\ExampleLib.UnitTests\\FileUtilTests.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T07:31:40.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FileUtil.cs",
+              "DocumentMoniker": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\src\\ExampleLib\\FileUtil.cs",
+              "RelativeDocumentMoniker": "src\\ExampleLib\\FileUtil.cs",
+              "ToolTip": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\src\\ExampleLib\\FileUtil.cs",
+              "RelativeToolTip": "src\\ExampleLib\\FileUtil.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T06:56:42.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TextUtil.cs",
+              "DocumentMoniker": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\src\\ExampleLib\\TextUtil.cs",
+              "RelativeDocumentMoniker": "src\\ExampleLib\\TextUtil.cs",
+              "ToolTip": "C:\\Users\\\u0414\u0435\u043D\u0438\u0441\\source\\repos\\compiler_course\\developer\\Lab1\\src\\ExampleLib\\TextUtil.cs",
+              "RelativeToolTip": "src\\ExampleLib\\TextUtil.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T05:58:56.775Z",
               "EditorCaption": ""
             }
           ]
