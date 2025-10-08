@@ -100,43 +100,13 @@ public class TextUtilTest
         Assert.Equal(expected, actual);
     }
 
-    //TOOD параметризованный тест
-    [Fact]
-    public void CanFormatPositiveEasternArabic()
+    [Theory]
+    [InlineData(1234567890, "١٢٣٤٥٦٧٨٩٠")]
+    [InlineData(-1234567890, "-١٢٣٤٥٦٧٨٩٠")]
+    [InlineData(int.MaxValue, "٢١٤٧٤٨٣٦٤٧")]
+    [InlineData(int.MinValue, "-٢١٤٧٤٨٣٦٤٨")]
+    public void FormatEasternArabic_ShouldReturnCorrectResult(int value, string expected)
     {
-        int value = 1234567890;
-        string expected = "١٢٣٤٥٦٧٨٩٠";
-
-        string actual = TextUtil.FormatEasternArabic(value);
-        Assert.Equal(expected, actual);
-    }
-
-    [Fact]
-    public void CanFormatNegativeEasternArabic()
-    {
-        int value = -1234567890;
-        string expected = "-١٢٣٤٥٦٧٨٩٠";
-
-        string actual = TextUtil.FormatEasternArabic(value);
-        Assert.Equal(expected, actual);
-    }
-
-    [Fact]
-    public void CanFormatMaxEasternArabic()
-    {
-        int value = int.MaxValue;
-        string expected = "٢١٤٧٤٨٣٦٤٧";
-
-        string actual = TextUtil.FormatEasternArabic(value);
-        Assert.Equal(expected, actual);
-    }
-
-    [Fact]
-    public void CanFormatMinEasternArabic()
-    {
-        int value = int.MinValue;
-        string expected = "-٢١٤٧٤٨٣٦٤٨";
-
         string actual = TextUtil.FormatEasternArabic(value);
         Assert.Equal(expected, actual);
     }
