@@ -107,4 +107,12 @@ public class FileUtilTests
         string actual = File.ReadAllText(file.Path);
         Assert.Equal(numbered.Replace("\r\n", "\n"), actual);
     }
+
+    [Fact]
+    public void ShouldThrowExceptionWhenFileNotExist()
+    {
+        const string path = "C:\\testfiles\\Test2.txt";
+
+        Assert.Throws<FileNotFoundException>(() => FileUtil.AddLineNumbers(path));
+    }
 }
