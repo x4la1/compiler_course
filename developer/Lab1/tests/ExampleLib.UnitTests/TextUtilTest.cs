@@ -101,13 +101,29 @@ public class TextUtilTest
     }
 
     [Theory]
-    [InlineData(1234567890, "١٢٣٤٥٦٧٨٩٠")]
-    [InlineData(-1234567890, "-١٢٣٤٥٦٧٨٩٠")]
-    [InlineData(int.MaxValue, "٢١٤٧٤٨٣٦٤٧")]
-    [InlineData(int.MinValue, "-٢١٤٧٤٨٣٦٤٨")]
+    [MemberData(nameof(GetFormattedEasternArabics))]
     public void FormatEasternArabic_ShouldReturnCorrectResult(int value, string expected)
     {
         string actual = TextUtil.FormatEasternArabic(value);
         Assert.Equal(expected, actual);
+    }
+
+    public static TheoryData<int, string> GetFormattedEasternArabics()
+    {
+        return new TheoryData<int, string>
+        {
+            {
+                1234567890, "١٢٣٤٥٦٧٨٩٠"
+            },
+            {
+                -1234567890, "-١٢٣٤٥٦٧٨٩٠"
+            },
+            {
+                int.MaxValue, "٢١٤٧٤٨٣٦٤٧"
+            },
+            {
+                int.MinValue, "-٢١٤٧٤٨٣٦٤٨"
+            },
+        };
     }
 }
