@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F11567D-6EF5-4ED8-9E2B-1B84E038857C}|tests\\Lexer.UnitTests\\Lexer.UnitTests.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\lexer.unittests\\testlist.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{2F11567D-6EF5-4ED8-9E2B-1B84E038857C}|tests\\Lexer.UnitTests\\Lexer.UnitTests.csproj|solutionrelative:tests\\lexer.unittests\\testlist.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0224CEA2-68E0-4F16-9C91-1F5809DFE320}|src\\Lexer\\Lexer.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\src\\lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0224CEA2-68E0-4F16-9C91-1F5809DFE320}|src\\Lexer\\Lexer.csproj|solutionrelative:src\\lexer\\lexer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F11567D-6EF5-4ED8-9E2B-1B84E038857C}|tests\\Lexer.UnitTests\\Lexer.UnitTests.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\lexer.unittests\\lexertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F11567D-6EF5-4ED8-9E2B-1B84E038857C}|tests\\Lexer.UnitTests\\Lexer.UnitTests.csproj|solutionrelative:tests\\lexer.unittests\\lexertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0224CEA2-68E0-4F16-9C91-1F5809DFE320}|src\\Lexer\\Lexer.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\src\\lexer\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0224CEA2-68E0-4F16-9C91-1F5809DFE320}|src\\Lexer\\Lexer.csproj|solutionrelative:src\\lexer\\tokentype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 162,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LexerTests.cs",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Lexer.UnitTests\\LexerTests.cs",
+              "RelativeDocumentMoniker": "tests\\Lexer.UnitTests\\LexerTests.cs",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Lexer.UnitTests\\LexerTests.cs",
+              "RelativeToolTip": "tests\\Lexer.UnitTests\\LexerTests.cs",
+              "ViewState": "AgIAAFYBAAAAAAAAAAAuwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T17:53:19.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lexer.cs",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Lexer\\Lexer.cs",
+              "RelativeDocumentMoniker": "src\\Lexer\\Lexer.cs",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Lexer\\Lexer.cs",
+              "RelativeToolTip": "src\\Lexer\\Lexer.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAQwJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:10:26.095Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 190,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TESTLIST.md",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Lexer.UnitTests\\TESTLIST.md",
+              "RelativeDocumentMoniker": "tests\\Lexer.UnitTests\\TESTLIST.md",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Lexer.UnitTests\\TESTLIST.md",
+              "RelativeToolTip": "tests\\Lexer.UnitTests\\TESTLIST.md",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-10-22T10:33:20.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TokenType.cs",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Lexer\\TokenType.cs",
+              "RelativeDocumentMoniker": "src\\Lexer\\TokenType.cs",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Lexer\\TokenType.cs",
+              "RelativeToolTip": "src\\Lexer\\TokenType.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAkwKAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T10:39:16.52Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
