@@ -1,4 +1,6 @@
-ï»¿namespace Lexer.UnitTests;
+using ExampleLib.UnitTests.Helpers;
+
+namespace Lexer.UnitTests;
 
 public class LexerTests
 {
@@ -7,6 +9,15 @@ public class LexerTests
     public void CanTokenize(string text, List<Token> expected)
     {
         List<Token> actual = Tokenize(text);
+        Assert.Equal(expected, actual);
+    }
+
+    [Theory]
+    [MemberData(nameof(GetStatistics))]
+    public void CanCollectStatistics(string text, string expected)
+    {
+        using TempFile file = TempFile.Create(text);
+        string actual = LexicalStats.CollectFromFile(file.Path);
         Assert.Equal(expected, actual);
     }
 
@@ -330,12 +341,37 @@ public class LexerTests
                 ]
             },
             {
-                "//ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹",
+                "//êîììåíòàðèé",
                 []
             },
             {
-                "/*ÐºÐ¾Ð¼Ð¼ÐµÐ½Ñ‚Ð°Ñ€Ð¸Ð¹*/",
+                "/*êîììåíòàðèé*/",
                 []
+            },
+        };
+    }
+
+    public static TheoryData<string, string> GetStatistics()
+    {
+        return new TheoryData<string, string>
+        {
+            {
+                @"string name;
+                print(""Enter your name: "");
+                input(name);
+                if (name == """") {
+                    print(""Hello, stranger!"");
+                } else {
+                    print(""Hello, "", name, ""!"");
+                ",
+                """
+                keywords: 7
+                identifiers: 4
+                number literals: 0
+                string literals: 5
+                operators: 1
+                other lexemes: 20
+                """
             },
         };
     }
