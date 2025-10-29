@@ -23,6 +23,16 @@ public enum TokenType
     While,
 
     /// <summary>
+    /// Ключевое слово continue
+    /// </summary>
+    Continue,
+
+    /// <summary>
+    /// Ключевое слово break
+    /// </summary>
+    Break,
+
+    /// <summary>
     /// Ключевое слово print
     /// </summary>
     Print,

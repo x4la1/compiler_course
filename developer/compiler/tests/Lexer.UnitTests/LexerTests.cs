@@ -194,6 +194,21 @@ public class LexerTests
                 ]
             },
             {
+                "while (true) {break; continue;}",
+                [
+                    new Token(TokenType.While),
+                    new Token(TokenType.OpenParenthesis),
+                    new Token(TokenType.True),
+                    new Token(TokenType.CloseParenthesis),
+                    new Token(TokenType.OpenBrace),
+                    new Token(TokenType.Break),
+                    new Token(TokenType.Semicolon),
+                    new Token(TokenType.Continue),
+                    new Token(TokenType.Semicolon),
+                    new Token(TokenType.CloseBrace),
+                ]
+            },
+            {
                 "int func aplusb(int a, int b) { return a + b; };",
                 [
                     new Token(TokenType.IntType),
@@ -371,6 +386,38 @@ public class LexerTests
                 string literals: 5
                 operators: 1
                 other lexemes: 20
+                """
+            },
+            {
+                @"/*
+                тута
+                кароче
+                код
+                эээ
+                */
+                int n;
+                print(""Enter n: "");
+                input(n);
+                if (n < 0) {
+                    print(""Error: n must be non-negative.""); //чето выводит
+                } else {
+                    int result = 1;
+	                int i = 1;
+	                while(i <= n)
+	                {
+		                result = result * i;
+		                i = i + 1;
+	                }
+                    print(""Factorial: "", result);
+                }
+                ",
+                """
+                keywords: 10
+                identifiers: 13
+                number literals: 4
+                string literals: 3
+                operators: 8
+                other lexemes: 28
                 """
             },
         };

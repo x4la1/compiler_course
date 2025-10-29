@@ -23,6 +23,8 @@ public static class LexicalStats
         [TokenType.Return] = "keywords",
         [TokenType.True] = "keywords",
         [TokenType.False] = "keywords",
+        [TokenType.Break] = "keywords",
+        [TokenType.Continue] = "keywords",
 
         [TokenType.PlusSign] = "operators",
         [TokenType.MinusSign] = "operators",
@@ -54,19 +56,18 @@ public static class LexicalStats
         [TokenType.Error] = "other lexemes",
     };
 
-    private static readonly Dictionary<string, int> Statistics = new()
-    {
-        { "keywords", 0 },
-        { "identifiers", 0 },
-        { "number literals", 0 },
-        { "string literals", 0 },
-        { "operators", 0 },
-        { "other lexemes", 0 },
-    };
-
     public static string CollectFromFile(string path)
     {
-        ResetStatistics();
+        Dictionary<string, int> statistics = new()
+        {
+            { "keywords", 0 },
+            { "identifiers", 0 },
+            { "number literals", 0 },
+            { "string literals", 0 },
+            { "operators", 0 },
+            { "other lexemes", 0 },
+        };
+
         string contents;
         try
         {
@@ -86,26 +87,16 @@ public static class LexicalStats
                 break;
             }
 
-            Statistics[TokenTypeToCategory[token.Type]]++;
+            statistics[TokenTypeToCategory[token.Type]]++;
         }
 
         return $"""
-            keywords: {Statistics["keywords"]}
-            identifiers: {Statistics["identifiers"]}
-            number literals: {Statistics["number literals"]}
-            string literals: {Statistics["string literals"]}
-            operators: {Statistics["operators"]}
-            other lexemes: {Statistics["other lexemes"]}
+            keywords: {statistics["keywords"]}
+            identifiers: {statistics["identifiers"]}
+            number literals: {statistics["number literals"]}
+            string literals: {statistics["string literals"]}
+            operators: {statistics["operators"]}
+            other lexemes: {statistics["other lexemes"]}
             """;
-    }
-
-    private static void ResetStatistics()
-    {
-        Statistics["keywords"] = 0;
-        Statistics["identifiers"] = 0;
-        Statistics["number literals"] = 0;
-        Statistics["string literals"] = 0;
-        Statistics["operators"] = 0;
-        Statistics["other lexemes"] = 0;
     }
 }
