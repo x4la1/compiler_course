@@ -16,6 +16,7 @@
 - [x] Оператор деления по модулю: `x = 5 % 2;`
 - [x] Оператор возведения в степень: `x = 5 ^ 2;`
 - [x] Разбор while, операторы сравнения, логические операторы: `while (a > b && a < b || a >= b || a <= b && a == b || a != b) {}`
+- [x] Разбор while с break, continue: `while (true) {break; continue;}`
 - [x] Разбор объявления функции с return: `int func aplusb(int a, int b) { return a + b; };`
 - [x] Разбор условия if else: ` if (a > b) { a + 1; } else { a - 1; }`
 - [x] Разбор ввода значения: `input(a);`

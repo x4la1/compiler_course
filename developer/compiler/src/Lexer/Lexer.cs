@@ -18,6 +18,12 @@ public class Lexer
             "while", TokenType.While
         },
         {
+            "continue", TokenType.Continue
+        },
+        {
+            "break", TokenType.Break
+        },
+        {
             "print", TokenType.Print
         },
         {
