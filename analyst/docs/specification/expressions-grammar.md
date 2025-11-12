@@ -94,7 +94,7 @@ relational_expr = additive_expr , { ("<" | "<=" | ">" | ">=") , additive_expr } 
 additive_expr = multiplicative_expr , { ("+" | "-") , multiplicative_expr } ;
 
 (* Умножение, деление, остаток, целочисленное деление *)
-multiplicative_expr = power_expr , { ("*" | "/" | "%" | "//") , power_expr } ;
+multiplicative_expr = unary_expr , { ("*" | "/" | "%" | "//") , unary_expr } ;;
 
 (* Унарные операторы: +, -, ! *)
 unary_expr = power_expr
