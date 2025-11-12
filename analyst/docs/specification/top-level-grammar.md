@@ -4,15 +4,15 @@
 
 ### Пример кода
 ```
-int x = 10;
+float x = 10;
 print(x);
 input(x);
 print("Final value:", x);
 ```
 
 ```
-int a;
-int b = 5;
+float a;
+float b = 5;
 a = b + 3;
 print(a);
 ```
@@ -60,7 +60,7 @@ statement =
     | ";" ;  (* пустая инструкция *)
 
 (* Объявление переменной *)
-variable_declaration = "int" , identifier , [ "=" , expression ] , ";" ;
+variable_declaration = "float" , identifier , [ "=" , expression ] , ";" ;
 
 (* Присваивание *)
 assignment_statement = identifier , "=" , expression , ";" ;
