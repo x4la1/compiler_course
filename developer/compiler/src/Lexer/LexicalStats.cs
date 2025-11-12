@@ -8,64 +8,72 @@ namespace Lexer;
 
 public static class LexicalStats
 {
+    private static readonly string Keywords = "keywords";
+    private static readonly string Operators = "operators";
+    private static readonly string Identifiers = "identifiers";
+    private static readonly string NumberLiterals = "number literals";
+    private static readonly string StringLiterals = "string literals";
+    private static readonly string OtherLexemes = "other lexemes";
+
+
     private static readonly Dictionary<TokenType, string> TokenTypeToCategory = new()
     {
-        [TokenType.If] = "keywords",
-        [TokenType.Else] = "keywords",
-        [TokenType.While] = "keywords",
-        [TokenType.Print] = "keywords",
-        [TokenType.Input] = "keywords",
-        [TokenType.IntType] = "keywords",
-        [TokenType.FloatType] = "keywords",
-        [TokenType.StringType] = "keywords",
-        [TokenType.BoolType] = "keywords",
-        [TokenType.Function] = "keywords",
-        [TokenType.Return] = "keywords",
-        [TokenType.True] = "keywords",
-        [TokenType.False] = "keywords",
-        [TokenType.Break] = "keywords",
-        [TokenType.Continue] = "keywords",
+        [TokenType.If] = Keywords,
+        [TokenType.Else] = Keywords,
+        [TokenType.While] = Keywords,
+        [TokenType.Print] = Keywords,
+        [TokenType.Input] = Keywords,
+        [TokenType.IntType] = Keywords,
+        [TokenType.FloatType] = Keywords,
+        [TokenType.StringType] = Keywords,
+        [TokenType.BoolType] = Keywords,
+        [TokenType.Function] = Keywords,
+        [TokenType.Return] = Keywords,
+        [TokenType.True] = Keywords,
+        [TokenType.False] = Keywords,
+        [TokenType.Break] = Keywords,
+        [TokenType.Continue] = Keywords,
 
-        [TokenType.PlusSign] = "operators",
-        [TokenType.MinusSign] = "operators",
-        [TokenType.MultiplySign] = "operators",
-        [TokenType.DivideSign] = "operators",
-        [TokenType.ModuloSign] = "operators",
-        [TokenType.ExponentiationSign] = "operators",
-        [TokenType.EqualSign] = "operators",
-        [TokenType.NotEqualSign] = "operators",
-        [TokenType.LessSign] = "operators",
-        [TokenType.GreaterSign] = "operators",
-        [TokenType.LessOrEqualSign] = "operators",
-        [TokenType.GreaterOrEqualSign] = "operators",
-        [TokenType.NotSign] = "operators",
-        [TokenType.And] = "operators",
-        [TokenType.Or] = "operators",
-        [TokenType.AssignSign] = "operators",
+        [TokenType.PlusSign] = Operators,
+        [TokenType.MinusSign] = Operators,
+        [TokenType.MultiplySign] = Operators,
+        [TokenType.DivideSign] = Operators,
+        [TokenType.ModuloSign] = Operators,
+        [TokenType.ExponentiationSign] = Operators,
+        [TokenType.EqualSign] = Operators,
+        [TokenType.NotEqualSign] = Operators,
+        [TokenType.LessSign] = Operators,
+        [TokenType.GreaterSign] = Operators,
+        [TokenType.LessOrEqualSign] = Operators,
+        [TokenType.GreaterOrEqualSign] = Operators,
+        [TokenType.NotSign] = Operators,
+        [TokenType.And] = Operators,
+        [TokenType.Or] = Operators,
+        [TokenType.AssignSign] = Operators,
 
-        [TokenType.Identifier] = "identifiers",
-        [TokenType.NumericLiteral] = "number literals",
-        [TokenType.StringLiteral] = "string literals",
+        [TokenType.Identifier] = Identifiers,
+        [TokenType.NumericLiteral] = NumberLiterals,
+        [TokenType.StringLiteral] = StringLiterals,
 
-        [TokenType.Comma] = "other lexemes",
-        [TokenType.Semicolon] = "other lexemes",
-        [TokenType.OpenParenthesis] = "other lexemes",
-        [TokenType.CloseParenthesis] = "other lexemes",
-        [TokenType.OpenBrace] = "other lexemes",
-        [TokenType.CloseBrace] = "other lexemes",
-        [TokenType.Error] = "other lexemes",
+        [TokenType.Comma] = OtherLexemes,
+        [TokenType.Semicolon] = OtherLexemes,
+        [TokenType.OpenParenthesis] = OtherLexemes,
+        [TokenType.CloseParenthesis] = OtherLexemes,
+        [TokenType.OpenBrace] = OtherLexemes,
+        [TokenType.CloseBrace] = OtherLexemes,
+        [TokenType.Error] = OtherLexemes,
     };
 
     public static string CollectFromFile(string path)
     {
         Dictionary<string, int> statistics = new()
         {
-            { "keywords", 0 },
-            { "identifiers", 0 },
-            { "number literals", 0 },
-            { "string literals", 0 },
-            { "operators", 0 },
-            { "other lexemes", 0 },
+            { Keywords, 0 },
+            { Identifiers, 0 },
+            { NumberLiterals, 0 },
+            { StringLiterals, 0 },
+            { Operators, 0 },
+            { OtherLexemes, 0 },
         };
 
         string contents;
@@ -91,12 +99,12 @@ public static class LexicalStats
         }
 
         return $"""
-            keywords: {statistics["keywords"]}
-            identifiers: {statistics["identifiers"]}
-            number literals: {statistics["number literals"]}
-            string literals: {statistics["string literals"]}
-            operators: {statistics["operators"]}
-            other lexemes: {statistics["other lexemes"]}
+            {Keywords}: {statistics[Keywords]}
+            {Identifiers}: {statistics[Identifiers]}
+            {NumberLiterals}: {statistics[NumberLiterals]}
+            {StringLiterals}: {statistics[StringLiterals]}
+            {Operators}: {statistics[Operators]}
+            {OtherLexemes}: {statistics[OtherLexemes]}
             """;
     }
 }
