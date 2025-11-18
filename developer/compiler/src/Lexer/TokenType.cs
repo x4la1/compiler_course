@@ -108,6 +108,11 @@ public enum TokenType
     DivideSign,
 
     /// <summary>
+    /// Оператор деления нацело
+    /// </summary>
+    ExactDivideSign,
+
+    /// <summary>
     /// Оператор деление по модулю
     /// </summary>
     ModuloSign,
@@ -206,6 +211,16 @@ public enum TokenType
     ///  Логическая ложь
     /// </summary>
     False,
+
+    /// <summary>
+    ///  Число пи
+    /// </summary>
+    Pi,
+
+    /// <summary>
+    ///  Число эйлера
+    /// </summary>
+    Euler,
 
     /// <summary>
     ///  Конец файла.

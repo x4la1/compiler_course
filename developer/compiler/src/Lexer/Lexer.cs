@@ -53,6 +53,12 @@ public class Lexer
         {
             "false", TokenType.False
         },
+        {
+            "pi", TokenType.Pi
+        },
+        {
+            "euler", TokenType.Euler
+        },
     };
 
     private readonly TextScanner scanner;
@@ -265,6 +271,9 @@ public class Lexer
             case '^':
                 scanner.Advance();
                 return new Token(TokenType.ExponentiationSign);
+            case '@':
+                scanner.Advance();
+                return new Token(TokenType.ExactDivideSign);
 
             case '=':
                 scanner.Advance();
