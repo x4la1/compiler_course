@@ -17,7 +17,6 @@ public class ParseTopLevelStatementsTests
     private readonly Context context;
     private FakeEnvironment environment;
 
-
     public ParseTopLevelStatementsTests()
     {
         context = new Context();

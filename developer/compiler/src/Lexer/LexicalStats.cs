@@ -15,7 +15,6 @@ public static class LexicalStats
     private static readonly string StringLiterals = "string literals";
     private static readonly string OtherLexemes = "other lexemes";
 
-
     private static readonly Dictionary<TokenType, string> TokenTypeToCategory = new()
     {
         [TokenType.If] = Keywords,

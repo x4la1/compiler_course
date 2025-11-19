@@ -30,6 +30,6 @@ public class Interpreter
 
         // Создаем парсер и выполняем программу
         Parser.Parser parser = new(context, environment, sourceCode);
-        //ParseProgramm
+        parser.ParseProgram();
     }
 }

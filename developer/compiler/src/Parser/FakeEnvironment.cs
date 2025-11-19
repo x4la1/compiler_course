@@ -13,9 +13,11 @@ public class FakeEnvironment : Execution.IEnvironment
 
     public IReadOnlyList<decimal> Results => output;
 
-    public FakeEnvironment(IEnumerable<decimal> inputValues = null)
+#pragma warning disable SA1201 // Elements should appear in the correct order
+    public FakeEnvironment(IEnumerable<decimal>? inputValues = null)
+#pragma warning restore SA1201 // Elements should appear in the correct order
     {
-        this.input = new Queue<decimal>(inputValues ?? Enumerable.Empty<decimal>());
+        input = new Queue<decimal>(inputValues ?? Enumerable.Empty<decimal>());
     }
 
     public void WriteNumber(decimal result)

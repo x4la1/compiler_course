@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0326F0DB-80DA-4625-9530-F26A86153EBD}|tests\\Parser.UnitTests\\Parser.UnitTests.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\parser.unittests\\parsetoplevelstatementstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0326F0DB-80DA-4625-9530-F26A86153EBD}|tests\\Parser.UnitTests\\Parser.UnitTests.csproj|solutionrelative:tests\\parser.unittests\\parsetoplevelstatementstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F4B66B5-DFEC-43A7-96AD-0009AB874FF8}|src\\Interpreter\\Interpreter.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\src\\interpreter\\interpreter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F4B66B5-DFEC-43A7-96AD-0009AB874FF8}|src\\Interpreter\\Interpreter.csproj|solutionrelative:src\\interpreter\\interpreter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F4B66B5-DFEC-43A7-96AD-0009AB874FF8}|src\\Interpreter\\Interpreter.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\src\\interpreter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F4B66B5-DFEC-43A7-96AD-0009AB874FF8}|src\\Interpreter\\Interpreter.csproj|solutionrelative:src\\interpreter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04EA8A07-5F33-4760-A73C-DE872706F569}|src\\Execution\\Execution.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\src\\execution\\consoleenviroment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04EA8A07-5F33-4760-A73C-DE872706F569}|src\\Execution\\Execution.csproj|solutionrelative:src\\execution\\consoleenviroment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0326F0DB-80DA-4625-9530-F26A86153EBD}|tests\\Parser.UnitTests\\Parser.UnitTests.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\parser.unittests\\testlist.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{0326F0DB-80DA-4625-9530-F26A86153EBD}|tests\\Parser.UnitTests\\Parser.UnitTests.csproj|solutionrelative:tests\\parser.unittests\\testlist.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0326F0DB-80DA-4625-9530-F26A86153EBD}|tests\\Parser.UnitTests\\Parser.UnitTests.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\parser.unittests\\parsetoplevelstatementstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0326F0DB-80DA-4625-9530-F26A86153EBD}|tests\\Parser.UnitTests\\Parser.UnitTests.csproj|solutionrelative:tests\\parser.unittests\\parsetoplevelstatementstests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{60B194E2-F63B-46CD-A5DC-E1C4AC3B548D}|src\\Parser\\Parser.csproj|c:\\users\\lebed\\source\\repos\\compiler\\developer\\compiler\\src\\parser\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,25 +37,25 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 117,
+          "DockedWidth": 51,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "ParseTopLevelStatementsTests.cs",
               "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Parser.UnitTests\\ParseTopLevelStatementsTests.cs",
               "RelativeDocumentMoniker": "tests\\Parser.UnitTests\\ParseTopLevelStatementsTests.cs",
               "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Parser.UnitTests\\ParseTopLevelStatementsTests.cs",
               "RelativeToolTip": "tests\\Parser.UnitTests\\ParseTopLevelStatementsTests.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAAHQAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAAHQAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-19T21:23:39.065Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Parser.cs",
               "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Parser\\Parser.cs",
               "RelativeDocumentMoniker": "src\\Parser\\Parser.cs",
@@ -51,12 +63,11 @@
               "RelativeToolTip": "src\\Parser\\Parser.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAFgAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T22:10:33.348Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T22:10:33.348Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ParseExpressionTests.cs",
               "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Parser.UnitTests\\ParseExpressionTests.cs",
               "RelativeDocumentMoniker": "tests\\Parser.UnitTests\\ParseExpressionTests.cs",
@@ -64,18 +75,56 @@
               "RelativeToolTip": "tests\\Parser.UnitTests\\ParseExpressionTests.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T21:54:46.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T21:54:46.087Z"
             }
           ]
         },
         {
-          "DockedWidth": 103,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 169,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Interpreter\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Interpreter\\Program.cs",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Interpreter\\Program.cs",
+              "RelativeToolTip": "src\\Interpreter\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAxwB8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T22:28:15.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Interpreter.cs",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Interpreter\\Interpreter.cs",
+              "RelativeDocumentMoniker": "src\\Interpreter\\Interpreter.cs",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Interpreter\\Interpreter.cs",
+              "RelativeToolTip": "src\\Interpreter\\Interpreter.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowB4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T22:27:29.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ConsoleEnviroment.cs",
+              "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Execution\\ConsoleEnviroment.cs",
+              "RelativeDocumentMoniker": "src\\Execution\\ConsoleEnviroment.cs",
+              "ToolTip": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\src\\Execution\\ConsoleEnviroment.cs",
+              "RelativeToolTip": "src\\Execution\\ConsoleEnviroment.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-19T22:26:23.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "TESTLIST.md",
               "DocumentMoniker": "C:\\Users\\Lebed\\source\\repos\\compiler\\developer\\compiler\\tests\\Parser.UnitTests\\TESTLIST.md",
               "RelativeDocumentMoniker": "tests\\Parser.UnitTests\\TESTLIST.md",
