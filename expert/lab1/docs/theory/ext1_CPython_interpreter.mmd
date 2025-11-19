@@ -1,1 +1,10 @@
-
+flowchart TD
+    A[Лексический анализ] -->|Токены Python| B[Синтаксический анализ]
+    B -->|AST Python| C[Семантический анализ]
+    C -->|Аннотированное AST| D[Генерация байт-кода]
+    D -->|.pyc файлы<br>opcodes Python| E[Виртуальная машина Python]
+    E -->|Интерпретация байт-кода| F[Выполнение]
+    
+    style D fill:#e1f5fe
+    style E fill:#f3e5f5
+    style F fill:#f1f8e9
