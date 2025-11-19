@@ -189,7 +189,7 @@ public class Parser
     /// <summary>
     ///  Разбирает унарное выражение
     ///  Правила:
-    ///     unary_expr = ["+" | "-" | "!"], power_expr.
+    ///     unary_expr = power_expr | ("+" | "-" | "!") , unary_expr ;.
     /// </summary>
     private decimal ParseUnaryExpression()
     {
@@ -197,19 +197,14 @@ public class Parser
         {
             case TokenType.PlusSign:
                 tokens.Advance();
-                return ParsePowerExpression();
+                return ParseUnaryExpression();
             case TokenType.MinusSign:
                 tokens.Advance();
-                return -ParsePowerExpression();
+                return -ParseUnaryExpression();
             case TokenType.NotSign:
                 tokens.Advance();
-                decimal value = ParsePowerExpression();
-                if (value == 0m)
-                {
-                    return 1m;
-                }
-
-                return 0m;
+                decimal value = ParseUnaryExpression();
+                return value == 0m ? 1m : 0m;
             default:
                 return ParsePowerExpression();
         }

@@ -1,4 +1,4 @@
-﻿namespace Parser.UnitTests;
+﻿namespace Interpreter.Specs;
 
 public class UnitTest1
 {
