@@ -1,14 +1,25 @@
-﻿namespace Parser.UnitTests;
+﻿using Execution;
+
+namespace Parser.UnitTests;
 
 public class ParserTests
 {
     private const int Precision = 5;
 
+    private readonly Context context;
+    private readonly FakeEnvironment environment;
+
+    public ParseTopLevelStatementsTest()
+    {
+        context = new Context();
+        environment = new FakeEnvironment();
+    }
+
     [Theory]
     [MemberData(nameof(GetExpressionTestData))]
     public void CanParseExpressions(string code, decimal expected)
     {
-        decimal actual = Parser.ExecuteExpression(code);
+        decimal actual = Parser.;
         Assert.Equal(expected, actual, Precision);
     }
 
@@ -58,12 +69,6 @@ public class ParserTests
         },
         {
             "1 + 2 * 3", 7
-        },
-        {
-            "1 + 2", 3
-        },
-        {
-            "5 - 2", 3
         },
         {
             "1 - 2 - 3", -4

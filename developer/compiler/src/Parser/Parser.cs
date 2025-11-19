@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+
+using Execution;
 
 using Lexer;
 
@@ -14,19 +17,144 @@ namespace Parser;
 /// </summary>
 public class Parser
 {
+    private readonly Context context;
+    private readonly IEnvironment environment;
     private readonly TokenStream tokens;
 
-    private Parser(string input)
+    public Parser(Context context, IEnvironment environment, string code)
     {
-        tokens = new TokenStream(input);
+        this.context = context;
+        this.environment = environment;
+        this.tokens = new TokenStream(code);
     }
 
-    public static decimal ExecuteExpression(string input)
+    /// <summary>
+    ///  Разбирает программу
+    ///  Правила:
+    ///     program = statement, {statement};.
+    /// </summary>
+    public void ParseProgram()
     {
-        Parser p = new Parser(input);
-        return p.ParseExpression();
+        while (tokens.Peek().Type != TokenType.EndOfFile)
+        {
+            ParseStatement();
+        }
     }
 
+    /// <summary>
+    ///  Разбирает интрукцию
+    ///  Правила:
+    ///     statement = variable_declaration
+    ///         | assignment_statement
+    ///         | print_statement
+    ///         | input_statement
+    ///         | ";" ;  (* пустая инструкция *).
+    /// </summary>
+    private void ParseStatement()
+    {
+        switch (tokens.Peek().Type)
+        {
+            case TokenType.FloatType:
+                ParseVarDeclarationExpression();
+                break;
+            case TokenType.Identifier:
+                ParseAssignmentStatement();
+                break;
+            case TokenType.Print:
+                ParsePrintStatement();
+                break;
+            case TokenType.Input:
+                ParseInputStatement();
+                break;
+            case TokenType.Semicolon:
+                tokens.Advance();
+                break;
+        }
+    }
+
+    /// <summary>
+    ///  Разбирает выражение объявления переменной
+    ///  Правила:
+    ///     variable_declaration = "float" , identifier , [ "=" , expression ].
+    /// </summary>
+    private void ParseVarDeclarationExpression()
+    {
+        Match(TokenType.FloatType);
+
+        Token identifier = Match(TokenType.Identifier);
+        decimal initialValue = 0;
+        if (tokens.Peek().Type == TokenType.EqualSign)
+        {
+            Match(TokenType.EqualSign);
+            initialValue = ParseExpression();
+        }
+
+        context.DefineVariable(identifier.Value!.ToString(), initialValue);
+        Match(TokenType.Semicolon);
+    }
+
+    /// <summary>
+    ///  Разбирает выражение присваивания значения переменной
+    ///  Правила:
+    ///     assignment_statement = identifier , "=" , expression.
+    /// </summary>
+    private void ParseAssignmentStatement()
+    {
+        Token identifier = Match(TokenType.Identifier);
+        Match(TokenType.AssignSign);
+        context.AssignVariable(identifier.Value!.ToString(), ParseExpression());
+        Match(TokenType.Semicolon);
+    }
+
+    /// <summary>
+    ///  Разбирает выражение печатания значения переменной в консоль
+    ///  Правила:
+    ///     print_statement = "print" , "(" , [ expression , { "," , expression } ] , ")".
+    /// </summary>
+    private void ParsePrintStatement()
+    {
+        Match(TokenType.Print);
+        Match(TokenType.OpenParenthesis);
+
+        if (tokens.Peek().Type != TokenType.CloseParenthesis)
+        {
+            decimal value = ParseExpression();
+            environment.WriteNumber(value);
+
+            while (tokens.Peek().Type == TokenType.Comma)
+            {
+                Match(TokenType.Comma);
+                value = ParseExpression();
+                environment.WriteNumber(value);
+            }
+        }
+
+        Match(TokenType.CloseParenthesis);
+        Match(TokenType.Semicolon);
+    }
+
+    /// <summary>
+    ///  Разбирает выражение считывания из консоли в переменную
+    ///  Правила:
+    ///     input_statement = "input" , "(" , identifier , ")".
+    /// </summary>
+    private void ParseInputStatement()
+    {
+        Match(TokenType.Input);
+        Match(TokenType.OpenParenthesis);
+
+        Token identifier = Match(TokenType.Identifier);
+        Match(TokenType.CloseParenthesis);
+        Match(TokenType.Semicolon);
+
+        context.AssignVariable(identifier.Value!.ToString(), environment.ReadNumber());
+    }
+
+    /// <summary>
+    ///  Разбирает выражение
+    ///  Правила:
+    ///     expression = or_expr.
+    /// </summary>
     private decimal ParseExpression()
     {
         return ParseOrExpression();
@@ -250,6 +378,9 @@ public class Parser
                 decimal value = ParseExpression();
                 Match(TokenType.CloseParenthesis);
                 return value;
+            case TokenType.Identifier:
+                tokens.Advance();
+                return context.GetValue(t.Value!.ToString());
             default:
                 throw new UnexpectedLexemeException(t.Type, t);
         }
@@ -266,7 +397,7 @@ public class Parser
         };
     }
 
-    private void Match(TokenType expected)
+    private Token Match(TokenType expected)
     {
         Token t = tokens.Peek();
         if (t.Type != expected)
@@ -275,5 +406,6 @@ public class Parser
         }
 
         tokens.Advance();
+        return t;
     }
 }
