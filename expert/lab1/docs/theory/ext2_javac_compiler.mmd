@@ -1,0 +1,10 @@
+flowchart TD
+    A[Лексический анализ] -->|Токены Java| B[Синтаксический анализ]
+    B -->|AST Java| C[Семантический анализ<br>проверка типов]
+    C -->|Аннотированное AST| D[Генерация байт-кода]
+    D -->|.class файлы<br>JVM bytecode| E[JIT-компиляция<br>HotSpot]
+    E -->|Нативный код| F[Выполнение]
+    
+    style D fill:#e1f5fe
+    style E fill:#fff3e0
+    style F fill:#f1f8e9
