@@ -1,0 +1,11 @@
+flowchart TD
+    A[Лексический анализ] -->|Токены C++| B[Синтаксический анализ]
+    B -->|AST Clang| C[Семантический анализ<br>проверка типов C++]
+    C -->|Аннотированное AST| D[Генерация LLVM IR]
+    D -->|LLVM Intermediate Representation| E[Оптимизации LLVM]
+    E -->|Оптимизированное IR| F[Генерация машинного кода]
+    F -->|Нативный код .o/.exe| G[Статическая линковка]
+    
+    style D fill:#e8f5e8
+    style E fill:#fff3e0
+    style F fill:#ffebee
