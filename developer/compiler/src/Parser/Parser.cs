@@ -83,9 +83,9 @@ public class Parser
 
         Token identifier = Match(TokenType.Identifier);
         decimal initialValue = 0;
-        if (tokens.Peek().Type == TokenType.EqualSign)
+        if (tokens.Peek().Type == TokenType.AssignSign)
         {
-            Match(TokenType.EqualSign);
+            Match(TokenType.AssignSign);
             initialValue = ParseExpression();
         }
 
@@ -171,7 +171,8 @@ public class Parser
         while (tokens.Peek().Type == TokenType.Or)
         {
             tokens.Advance();
-            value = (value != 0 || ParseAndExpression() != 0) ? 1 : 0;
+            decimal right = ParseAndExpression();
+            value = (value != 0 || right != 0) ? 1 : 0;
         }
 
         return value;
@@ -188,7 +189,8 @@ public class Parser
         while (tokens.Peek().Type == TokenType.And)
         {
             tokens.Advance();
-            value = (value != 0 && ParseEqualityExpression() != 0) ? 1 : 0;
+            decimal right = ParseEqualityExpression();
+            value = (value != 0 && right != 0) ? 1 : 0;
         }
 
         return value;
@@ -208,11 +210,13 @@ public class Parser
             {
                 case TokenType.EqualSign:
                     tokens.Advance();
-                    value = (value == ParseCompareExpression()) ? 1 : 0;
+                    decimal right = ParseCompareExpression();
+                    value = (value == right) ? 1 : 0;
                     break;
                 case TokenType.NotEqualSign:
                     tokens.Advance();
-                    value = (value != ParseCompareExpression()) ? 1 : 0;
+                    right = ParseCompareExpression();
+                    value = (value != right) ? 1 : 0;
                     break;
                 default:
                     return value;
@@ -234,19 +238,23 @@ public class Parser
             {
                 case TokenType.LessSign:
                     tokens.Advance();
-                    value = (value < ParseAdditiveExpression()) ? 1 : 0;
+                    decimal right = ParseAdditiveExpression();
+                    value = (value < right) ? 1 : 0;
                     break;
                 case TokenType.LessOrEqualSign:
                     tokens.Advance();
-                    value = (value <= ParseAdditiveExpression()) ? 1 : 0;
+                    right = ParseAdditiveExpression();
+                    value = (value <= right) ? 1 : 0;
                     break;
                 case TokenType.GreaterSign:
                     tokens.Advance();
-                    value = (value > ParseAdditiveExpression()) ? 1 : 0;
+                    right = ParseAdditiveExpression();
+                    value = (value > right) ? 1 : 0;
                     break;
                 case TokenType.GreaterOrEqualSign:
                     tokens.Advance();
-                    value = (value >= ParseAdditiveExpression()) ? 1 : 0;
+                    right = ParseAdditiveExpression();
+                    value = (value >= right) ? 1 : 0;
                     break;
                 default:
                     return value;

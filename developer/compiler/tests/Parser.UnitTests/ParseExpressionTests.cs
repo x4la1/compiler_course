@@ -2,14 +2,14 @@
 
 namespace Parser.UnitTests;
 
-public class ParserTests
+public class ParseExpressionTest
 {
     private const int Precision = 5;
 
     private readonly Context context;
     private readonly FakeEnvironment environment;
 
-    public ParseTopLevelStatementsTest()
+    public ParseExpressionTest()
     {
         context = new Context();
         environment = new FakeEnvironment();
@@ -19,8 +19,12 @@ public class ParserTests
     [MemberData(nameof(GetExpressionTestData))]
     public void CanParseExpressions(string code, decimal expected)
     {
-        decimal actual = Parser.;
-        Assert.Equal(expected, actual, Precision);
+        string programCode = $"print({code});";
+        Parser parser = new(context, environment, programCode);
+
+        parser.ParseProgram();
+
+        Assert.Equal(expected, environment.Results[0], Precision);
     }
 
     public static TheoryData<string, decimal> GetExpressionTestData() => new()
@@ -115,6 +119,5 @@ public class ParserTests
         {
             "((10 * 5 + -2 ^ 3 ^ 2) < -400) == 1 && !0 || 0", 1
         },
-
     };
 }

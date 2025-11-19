@@ -9,14 +9,14 @@ namespace Parser;
 public class FakeEnvironment : Execution.IEnvironment
 {
     private readonly List<decimal> output = [];
-    private readonly List<decimal> input = [];
-
-    public FakeEnvironment(List<decimal> input = null)
-    {
-        this.input = input ?? new List<decimal>();
-    }
+    private readonly Queue<decimal> input = [];
 
     public IReadOnlyList<decimal> Results => output;
+
+    public FakeEnvironment(IEnumerable<decimal> inputValues = null)
+    {
+        this.input = new Queue<decimal>(inputValues ?? Enumerable.Empty<decimal>());
+    }
 
     public void WriteNumber(decimal result)
     {
@@ -25,8 +25,6 @@ public class FakeEnvironment : Execution.IEnvironment
 
     public decimal ReadNumber()
     {
-        decimal firstElement = input[0];
-        input.RemoveAt(0);
-        return firstElement;
+        return input.Dequeue();
     }
 }
