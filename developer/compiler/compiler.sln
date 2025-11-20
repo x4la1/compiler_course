@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4C68BC1-722B-4069-9E4D-7E7FB04FA20A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Parser\TODO.md = src\Parser\TODO.md
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleLib", "src\ExampleLib\ExampleLib.csproj", "{D3DB6112-0E76-495B-BE71-5186112A4296}"
 EndProject
