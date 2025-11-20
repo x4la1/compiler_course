@@ -7,7 +7,7 @@
 float x = 10;
 print(x);
 input(x);
-print("Final value:", x);
+print(x);
 ```
 
 ```
