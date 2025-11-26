@@ -16,11 +16,57 @@ float b = 5;
 a = b + 3;
 print(a);
 ```
+Функция, ветвление и цикл
+```
+func abs(x: float): float {
+    if (x < 0) {
+        return -x;
+    } else {
+        return x;
+    }
+}
+
+float n;
+input(n);
+float i = 1;
+float sum = 0;
+while (i <= n) {
+    sum = sum + i;
+    i = i + 1;
+    if (sum > 100) {
+        break;
+    }
+}
+print("Sum:", sum);
+```
+Цикл с постусловием и switch
+```
+float x = 0;
+repeat {
+    x = x + 1;
+    if (x == 3) break;
+} until (x >= 5);
+
+switch (x) {
+    case 1: print("One"); break;
+    case 2: print("Two"); break;
+    case 3: print("Three");
+    case 4: print("Four"); break;
+    default: print("Other");
+}
+```
 
 ---
 
 ## Ключевые особенности языка
 
+- Язык **императивный**.
+- Поддерживается один числовой тип: **float**.
+- Ветвления (if/else) и циклы (while, repeat) — это инструкции.
+- Поддерживаются пользовательские функции, возвращающие float.
+- Проблема висячего else решена: else всегда связывается с ближайшим if без else (достигается структурой грамматики).
+- switch работает без автоматического break: возможен fall-through.
+- **Нет процедур**: все подпрограммы — функции с возвратом значения
 - Программа состоит из **последовательности инструкций** на верхнем уровне.
 - Нет объявления `main`, `PROGRAM` или точки входа — выполнение начинается с первой инструкции.
 - **Переменные объявляются явно**: `тип имя [= выражение];`
@@ -36,13 +82,18 @@ print(a);
 
 1. **Объявление переменной** должно происходить **до её использования** в той же области видимости.
 2. **Повторное объявление** переменной с тем же именем **в одной области видимости запрещено**.
-3. Область видимости:
+3. **Функция** должна быть объявлена до вызова.
+4. В `switch` выражение и метки `case` должны быть числовыми.
+5. `break` можно использовать только внутри циклов или switch.
+6. В `return` должно быть выражение (возврат значения обязателен).
+7. Функции должны иметь хотя бы один `return`.
+8. Область видимости:
    - **Глобальная** — для переменных, объявленных на верхнем уровне.
    - **Локальная** — для переменных внутри блока `{ ... }`.
-4. **Инструкция `input`** принимает **только идентификатор** (нельзя писать `input(x + 1)`).
-5. **Инструкция `print`** принимает **список выражений**, разделённых запятыми.
-6. Тип переменной **определяется при объявлении** и **не может меняться**.
-7. Инструкции завершаются точкой с запятой `;`.
+9. **Инструкция `input`** принимает **только идентификатор** (нельзя писать `input(x + 1)`).
+10. **Инструкция `print`** принимает **список выражений**, разделённых запятыми.
+11. Тип переменной **определяется при объявлении** и **не может меняться**.
+12. Инструкции завершаются точкой с запятой `;`.
 
 ---
 
@@ -57,10 +108,16 @@ statement =
     | assignment_statement
     | print_statement
     | input_statement
+    | if_statement
+    | while_statement
+    | repeat_statement
+    | switch_statement
+    | return_statement
+    | break_statement
     | ";" ;  (* пустая инструкция *)
 
 (* Объявление переменной *)
-variable_declaration = "float" , identifier , [ "=" , expression ] , ";" ;
+variable_declaration = type_identifier , identifier , [ "=" , expression ] , ";" ;
 
 (* Присваивание *)
 assignment_statement = identifier , "=" , expression , ";" ;
@@ -71,10 +128,35 @@ print_statement = "print" , "(" , [ expression , { "," , expression } ] , ")" , 
 (* Ввод *)
 input_statement = "input" , "(" , identifier , ")" , ";" ;
 
-(* Выражения — берутся из expressions-grammar.md *)
-(* expression = ... ; *)
+(* Условный оператор *)
+if_statement = "if" , "(" , expression , ")" , statement , [ "else" , statement ] ;
 
-(* Идентификаторы и литералы — берутся из expressions-grammar.md *)
+(* Цикл с предусловием *)
+while_statement = "while" , "(" , expression , ")" , statement ;
+
+(* Цикл с постусловием *)
+repeat_statement = "repeat" , block , "until" , "(" , expression , ")" ;
+
+(* Switch *)
+switch_statement = "switch" , "(" , expression , ")" , "{" , { case_clause } , [ default_clause ] , "}" ;
+
+case_clause = "case" , expression , ":" , { statement } ;
+default_clause = "default" , ":" , { statement } ;
+
+(* Возврат из функции *)
+return_statement = "return" , expression , ";" ;
+
+(* Прерывание цикла или switch *)
+break_statement = "break" , ";" ;
+
+(* Блок инструкций *)
+block = "{" , { statement } , "}" ;
+
+(* Типы данных *)
+type_identifier = "int" | "float" | "bool" | "string" ;
+
+(* Выражения и идентификаторы — из expressions-grammar.md *)
+(* expression = ... ; *)
 (* identifier = ... ; *)
-(* number_literal = ... ; *)
+
 ```
