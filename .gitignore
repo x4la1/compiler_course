@@ -2,6 +2,7 @@
 /.vscode/
 /.idea/
 *.sln.DotSettings.user
+[Bb]ackup
 
 # Build results
 /src/*/bin/
