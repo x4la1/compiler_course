@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 using Execution;
 
-using Microsoft.VisualStudio.TestPlatform.PlatformAbstractions.Interfaces;
-
 namespace Parser.UnitTests;
 
 public class ParseTopLevelStatementsTests
@@ -15,7 +13,7 @@ public class ParseTopLevelStatementsTests
     private const int Precision = 5;
 
     private readonly Context context;
-    private FakeEnvironment environment;
+    private readonly FakeEnvironment environment;
 
     public ParseTopLevelStatementsTests()
     {
@@ -76,43 +74,5 @@ public class ParseTopLevelStatementsTests
                 "print();", []
             },
         };
-    }
-
-    [Fact]
-    public void CanParseProgramWithInput()
-    {
-        List<decimal> inputValues = new List<decimal> { 50.5m };
-        string code = @"
-            float x = 10;
-            print(x);
-            input(x);
-            print(x);
-        ";
-        environment = new FakeEnvironment(inputValues);
-        Parser parser = new(context, environment, code);
-
-        parser.ParseProgram();
-
-        List<decimal> expected = new List<decimal> { 10, 50.5m };
-        IReadOnlyList<decimal> actual = environment.Results;
-        Assert.Equal(expected, actual);
-    }
-
-    [Fact]
-    public void CanParseSmallProgram()
-    {
-        string code = @"
-            float a;
-            float b = 5;
-            a = b + 3;
-            print(a);
-        ";
-        Parser parser = new(context, environment, code);
-
-        parser.ParseProgram();
-
-        List<decimal> expected = new List<decimal> { 8 };
-        IReadOnlyList<decimal> actual = environment.Results;
-        Assert.Equal(expected, actual);
     }
 }

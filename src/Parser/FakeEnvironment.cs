@@ -9,15 +9,21 @@ namespace Parser;
 public class FakeEnvironment : Execution.IEnvironment
 {
     private readonly List<decimal> output = [];
-    private readonly Queue<decimal> input = [];
+    private Queue<decimal> input = [];
+
+    public FakeEnvironment(IEnumerable<decimal>? inputValues = null)
+    {
+        if (inputValues != null)
+        {
+            SetInput(inputValues);
+        }
+    }
 
     public IReadOnlyList<decimal> Results => output;
 
-#pragma warning disable SA1201 // Elements should appear in the correct order
-    public FakeEnvironment(IEnumerable<decimal>? inputValues = null)
-#pragma warning restore SA1201 // Elements should appear in the correct order
+    public void SetInput(IEnumerable<decimal> inputValues)
     {
-        input = new Queue<decimal>(inputValues ?? Enumerable.Empty<decimal>());
+        input = new Queue<decimal>(inputValues);
     }
 
     public void WriteNumber(decimal result)

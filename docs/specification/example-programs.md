@@ -5,11 +5,10 @@
 ```
 float a;
 float b;
-print("Enter two numbers:");
 input(a);
 input(b);
 float sum = a + b;
-print("Sum:", sum);
+print(sum);
 ```
 
 ---
@@ -18,10 +17,9 @@ print("Sum:", sum);
 
 ```
 float radius;
-print("Enter radius:");
 input(radius);
 float area = Pi * radius ^ 2;
-print("Area:", area);
+print(area);
 ```
 
 ---
@@ -30,8 +28,7 @@ print("Area:", area);
 
 ```
 float fahrenheit;
-print("Enter temperature in Fahrenheit:");
 input(fahrenheit);
 float celsius = (fahrenheit - 32.0) * 5.0 / 9.0;
-print("Temperature in Celsius:", celsius);
+print(celsius);
 ```

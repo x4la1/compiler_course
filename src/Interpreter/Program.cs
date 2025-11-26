@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Execution;
+
 using Parser;
 
 namespace Interpreter;
@@ -33,7 +35,8 @@ public static class Program
             string sourceCode = File.ReadAllText(filePath);
 
             // Выполняем программу
-            Interpreter interpreter = new Interpreter();
+            IEnvironment environment = new ConsoleEnviroment();
+            Interpreter interpreter = new Interpreter(environment);
             interpreter.Execute(sourceCode);
 
             return 0;

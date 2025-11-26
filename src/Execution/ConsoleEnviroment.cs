@@ -19,7 +19,7 @@ public class ConsoleEnviroment : IEnvironment
         }
         else
         {
-            throw new InvalidInputException();
+            throw new InvalidInputException("Float expected");
         }
     }
 
