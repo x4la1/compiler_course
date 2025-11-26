@@ -11,24 +11,15 @@ public class ConsoleEnviroment : IEnvironment
 {
     public decimal ReadNumber()
     {
-        while (true)
+        string? input = Console.ReadLine();
+
+        if (decimal.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal result))
         {
-            string? input = Console.ReadLine();
-
-            if (string.IsNullOrEmpty(input))
-            {
-                Console.Error.WriteLine("Invalid number");
-                continue;
-            }
-
-            if (decimal.TryParse(input, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal result))
-            {
-                return result;
-            }
-            else
-            {
-                Console.Error.WriteLine("Invalid number;");
-            }
+            return result;
+        }
+        else
+        {
+            throw new InvalidInputException();
         }
     }
 
