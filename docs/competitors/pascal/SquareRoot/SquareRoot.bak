@@ -1,0 +1,18 @@
+program SquareRoot;
+var
+  x, root: real;
+begin
+  write('Enter a real number: ');
+  readln(x);
+  if x < 0
+  then
+    begin
+      writeln('ERROR');
+    end
+  else
+    begin
+      root := sqrt(x);
+      writeln('Square root: ', root:0:2);
+    end;
+  readln;
+end.
