@@ -2,6 +2,7 @@
 /.vscode/
 /.idea/
 *.sln.DotSettings.user
+[Bb]ackup
 
 # Build results
 /src/*/bin/
@@ -17,6 +18,8 @@ x86/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+.vs/
 
 # Sandbox directory
 sandbox/
+
