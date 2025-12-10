@@ -325,7 +325,7 @@ public class Parser
     /// <summary>
     ///  Разбирает унарное выражение
     ///  Правила:
-    ///     unary_expr = power_expr | ("+" | "-" | "!") , unary_expr ;.
+    ///     unary_expr = ["+" | "-" | "!"] , power_expr ;.
     /// </summary>
     private decimal ParseUnaryExpression()
     {

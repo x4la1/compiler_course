@@ -81,7 +81,7 @@
 expression = conditional_expr ;
 
 (* Тернарный оператор: условие ? выражение_если_истина : выражение_если_ложь *)
-conditional_expr = or_expr , [ "?" , expression , ":" , conditional_expr ] ;
+# conditional_expr = or_expr , [ "?" , expression , ":" , conditional_expr ] ;
 
 (* Логическое ИЛИ *)
 or_expr = and_expr , { "||" , and_expr } ;
