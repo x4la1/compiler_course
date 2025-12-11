@@ -5,7 +5,6 @@ namespace Parser.UnitTests;
 public class ParseExpressionTest
 {
     private const int Precision = 5;
-
     private readonly Context context;
     private readonly FakeEnvironment environment;
 

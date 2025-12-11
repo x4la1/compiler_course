@@ -25,6 +25,6 @@ public class ConsoleEnviroment : IEnvironment
 
     public void WriteNumber(decimal result)
     {
-        Console.WriteLine("Result: " + result.ToString("0.#####", CultureInfo.InvariantCulture));
+        Console.WriteLine(result.ToString("0.#####", CultureInfo.InvariantCulture));
     }
 }
