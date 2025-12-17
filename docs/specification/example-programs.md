@@ -118,3 +118,58 @@ repeat {
 } until (i >= b);
 print("A^B:", result);
 ```
+
+### 8. `FizzBuzz` 
+
+```
+float n;
+print("Enter count:");
+input(n);
+
+float i = 1;
+while (i <= n) {
+    bool div3 = (i % 3 == 0);
+    bool div5 = (i % 5 == 0);
+    if (div3 && div5) {
+        print("FizzBuzz");
+    } else if (div3) {
+        print("Fizz");
+    } else if (div5) {
+        print("Buzz");
+    } else {
+        print(i);
+    }
+    i = i + 1;
+}
+```
+
+### 9. `CheckPalindrome`
+
+```
+string s;
+print("Enter a word:");
+input(s);
+
+string lower = toLowerCase(s);
+float len = length(lower);
+bool isPal = true;
+float left = 0;
+float right = len - 1;
+
+while (left < right) {
+    string l = charAt(lower, left);
+    string r = charAt(lower, right);
+    if (l != r) {
+        isPal = false;
+        break;
+    }
+    left = left + 1;
+    right = right - 1;
+}
+
+if (isPal) {
+    print("yes");
+} else {
+    print("no");
+}
+```

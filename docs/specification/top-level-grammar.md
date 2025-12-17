@@ -66,7 +66,6 @@ switch (x) {
 - Поддерживаются пользовательские функции, возвращающие float.
 - Проблема висячего else решена: else всегда связывается с ближайшим if без else (достигается структурой грамматики).
 - switch работает без автоматического break: возможен fall-through.
-- **Нет процедур**: все подпрограммы — функции с возвратом значения
 - Программа состоит из **последовательности инструкций** на верхнем уровне.
 - Нет объявления `main`, `PROGRAM` или точки входа — выполнение начинается с первой инструкции.
 - **Переменные объявляются явно**: `тип имя [= выражение];`
@@ -100,7 +99,16 @@ switch (x) {
 ## Грамматика в нотации EBNF
 ```
 (* Программа = последовательность инструкций на верхнем уровне *)
-program = { statement } ;
+program = { top_level_item } ;
+
+top_level_item = function_declaration
+               | statement ;
+
+(* Объявление функции *)
+function_declaration = "func" , identifier , "(" , [ parameter_list ] , ")" , ":" , return_type , block ;
+
+parameter_list = parameter , { "," , parameter } ;
+parameter = identifier , ":" , variable_type ;  (* void не допускается в параметрах *)
 
 (* Инструкция *)
 statement = 
@@ -115,6 +123,15 @@ statement =
     | return_statement
     | break_statement
     | ";" ;  (* пустая инструкция *)
+
+(* Объявление переменной — void запрещён *)
+variable_declaration = variable_type , identifier , [ "=" , expression ] , ";" ;
+
+(* Типы для переменных *)
+variable_type = "float" | "bool" | "string" ;
+
+(* Типы для возврата функции *)
+return_type = "float" | "bool" | "string" | "void" ;
 
 (* Объявление переменной *)
 variable_declaration = type_identifier , identifier , [ "=" , expression ] , ";" ;
