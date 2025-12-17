@@ -20,8 +20,7 @@ digit_sequence = digit, {digit};
 real = unsigned_real | signed_real;
 
 unsigned_real = digit_sequence, ".", fractional_part, ["e", scale_factor] 
-                | digit_sequence, "e", scale_factor 
-                | ".", fractional_part, ["e", scale_factor];
+                | digit_sequence, "e", scale_factor ;
 
 signed_real = [sign], unsigned_real;
 
