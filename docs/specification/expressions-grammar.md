@@ -4,7 +4,7 @@
 
 Выражения в языке могут содержать:
 
-- **Числовые литералы**: целые (`42`, `-17`) и вещественные (`3.14`)
+- **Числовые литералы**: вещественные (`3.14`, `17`)
 - **Идентификаторы**: переменные и константы (`x`, `Pi`, `Euler`)
 - **Унарные операторы**: `+`, `-`, `!`
 - **Бинарные операторы**:  
@@ -19,6 +19,7 @@
 ## Операторы
 
 ### Арифметические операторы
+
 
 | Символы | Операция                          |
 |--------|-----------------------------------|
@@ -81,7 +82,7 @@
 expression = conditional_expr ;
 
 (* Тернарный оператор: условие ? выражение_если_истина : выражение_если_ложь *)
-# conditional_expr = or_expr , [ "?" , expression , ":" , conditional_expr ] ;
+conditional_expr = or_expr , [ "?" , expression , ":" , conditional_expr ] ;
 
 (* Логическое ИЛИ *)
 or_expr = and_expr , { "||" , and_expr } ;
@@ -117,11 +118,7 @@ primary_expr = number_literal
 argument_list = expression , { "," , expression } ;
 
 (* Числовые литералы *)
-number_literal = integer_literal
-               | float_literal ;
-
-integer_literal = digit , { digit }
-                | "0" ;
+number_literal = float_literal ;
 
 float_literal = digit , { digit } , "." , { digit } ;
 

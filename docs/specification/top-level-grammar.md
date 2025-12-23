@@ -133,9 +133,6 @@ variable_type = "float" | "bool" | "string" ;
 (* Типы для возврата функции *)
 return_type = "float" | "bool" | "string" | "void" ;
 
-(* Объявление переменной *)
-variable_declaration = type_identifier , identifier , [ "=" , expression ] , ";" ;
-
 (* Присваивание *)
 assignment_statement = identifier , "=" , expression , ";" ;
 
@@ -170,7 +167,7 @@ break_statement = "break" , ";" ;
 block = "{" , { statement } , "}" ;
 
 (* Типы данных *)
-type_identifier = "int" | "float" | "bool" | "string" ;
+type_identifier = "float" | "bool" | "string" | "void" ;
 
 (* Выражения и идентификаторы — из expressions-grammar.md *)
 (* expression = ... ; *)
