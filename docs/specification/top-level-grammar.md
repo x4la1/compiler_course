@@ -158,16 +158,13 @@ case_clause = "case" , expression , ":" , { statement } ;
 default_clause = "default" , ":" , { statement } ;
 
 (* Возврат из функции *)
-return_statement = "return" , expression , ";" ;
+return_statement = "return" , [ expression ] , ";" ;
 
 (* Прерывание цикла или switch *)
 break_statement = "break" , ";" ;
 
 (* Блок инструкций *)
 block = "{" , { statement } , "}" ;
-
-(* Типы данных *)
-type_identifier = "float" | "bool" | "string" | "void" ;
 
 (* Выражения и идентификаторы — из expressions-grammar.md *)
 (* expression = ... ; *)
